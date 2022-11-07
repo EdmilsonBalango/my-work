@@ -66,6 +66,48 @@
     /* transform: ; */
 }
 
-.container:hover{
-    /* width: 30rem; */
+
+
+.sidebarOpacity{
+    z-index: 50;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    /* display: none; */
+    animation: opacitor 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes opacitor {
+    0% {
+        background-color: rgba(0, 0, 0, 0);
+        /* display: flex; */
+    }
+    100% {
+        background-color: rgba(0, 0, 0, .8);
+        /* display: none; */
+    }
+    
+}
+.sidebarContent{
+    z-index: 50;
+    position: fixed;
+    height: 100vh;
+    background-color: #385980;
+    display: flex;
+    flex-direction: column;
+    animation: sizer 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+/* ` z-50 flex lg:hidden fixed h-screen bg-blue-core flex-col` */
+@keyframes sizer {
+    from {
+        width: 0px;
+        
+        
+
+    }
+    to {
+        width: 320px;
+        
+    }
+    
 }

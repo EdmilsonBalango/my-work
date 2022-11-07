@@ -26,7 +26,7 @@ const Dashboard =() => {
             CeationDate: '31/10/2022',
             tasksDone: '3/5',
             status: {
-                label: 'Em andamento',
+                label: 'Em-andamento',
                 color: () =>{
                     let color = 'Em andamento'
                     if(color === 'Feito')
@@ -60,7 +60,7 @@ const Dashboard =() => {
             CeationDate: '31/10/2022',
             tasksDone: '3/5',
             status: {
-                label: 'Em andamento',
+                label: 'Em-andamento',
                 
                 color: () =>{
                     let color = 'Parado'
@@ -115,7 +115,7 @@ const Dashboard =() => {
         
                                     <th scope="row" class=" py-4 px-6 font-medium text-gray-900 hover:text-sky-700 whitespace-nowrap ">{task.Title}</th>
                                     <td class="py-4 px-6 ">{task.CeationDate}</td>
-                                    <td class="py-4 px-6 font-bold ">{task.tasksDone}</td>
+                                    <td class="py-4 px-6 font-bold break-keep ">{task.tasksDone}</td>
                                     <td class="py-4 px-6">
                                     <span class={`${task.status.color()} text-white text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900`}>{task.status.label}</span>
                                     </td>
