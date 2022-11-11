@@ -7,7 +7,7 @@ const HeaderComponent = () => {
 
   
     return (
-        <div className={`sticky top-0 h-[70px] w-full bg-white shadow-md p-[10px] flex justify-between items-center`}>
+        <div className={`sticky top-0 h-[70px] w-full bg-white shadow-sm p-[10px] flex justify-between items-center`}>
             
             <div className=" flex flex-row items-center justify-between w-[65%]">
                 <button type="button" data-modal-toggle="popup-modal" className="lg:hidden hover: cursor-pointer hover:bg-blue-light p-1 rounded-md">

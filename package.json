@@ -9,6 +9,7 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.11",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "flowbite": "^1.5.3",
     "flowbite-react": "^0.3.2",
     "next": "latest",
