@@ -29,11 +29,13 @@ const Task = ({task}) => {
         setEditing(true)
         
     }
+
+    //Changes to make: count number of characters and define the width
     
     return (
         <div className={`h-10 ${backgroundColor()} hover:scale-[1.01] hover:cursor-pointer flex flex-row items-center border-b border-b-white`}>
             <span className={` ${statusColor()} w-[1.5%] h-full mr-1.5`} /> 
-            { !editing ? <span  onClick={()=> seeChanges()}  className={`font-semibold  w-[50%] line-clamp-1`} >{task.task}</span>
+            { !editing ? <div className='w-[50%]'><span  onClick={()=> seeChanges()}  className={`font-semibold line-clamp-1 bg-slate-200 max-w-[80%]`} >{task.task}</span></div>
             : <input ref={tref} autoFocus onBlur={() => setEditing(false)} type={'text'} className={` h-7 font-semibold outline-none border-none w-[50%]`} onFocus={(e)=>console.log(e)} />}
             <div className="border-r border-r-white h-full ml-2" />
             
