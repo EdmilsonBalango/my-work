@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { BsThreeDots } from 'react-icons/bs'
 
-const Task = ({task}) => {
+const Task = ({task, onClick}) => {
 
     const [ editing, setEditing ] = useState(false)
     const tref = useRef().current
@@ -25,18 +25,23 @@ const Task = ({task}) => {
             return 'bg-[#AAEED2]'
         }
     }
-    function seeChanges(){
+    function seeChanges({e}){
         setEditing(true)
-        
+    }
+
+    function onFocus(e){
+        e.target.value = task.task 
+        e.target.select()
+
     }
 
     //Changes to make: count number of characters and define the width
     
     return (
-        <div className={`h-10 ${backgroundColor()} hover:scale-[1.01] hover:cursor-pointer flex flex-row items-center border-b border-b-white`}>
+        <div onClick={()=> onClick(task.id)} className={`h-10 ${backgroundColor()} hover:scale-[1.01] hover:cursor-pointer flex flex-row items-center border-b border-b-white`}>
             <span className={` ${statusColor()} w-[1.5%] h-full mr-1.5`} /> 
-            { !editing ? <div className='w-[50%]'><span  onClick={()=> seeChanges()}  className={`font-semibold line-clamp-1 bg-slate-200 max-w-[80%]`} >{task.task}</span></div>
-            : <input ref={tref} autoFocus onBlur={() => setEditing(false)} type={'text'} className={` h-7 font-semibold outline-none border-none w-[50%]`} onFocus={(e)=>console.log(e)} />}
+            { !editing ? <div className='w-[50%]'><span onDoubleClick={e => seeChanges(e)} className={`font-semibold line-clamp-1`} >{task.task}</span></div>
+            : <input ref={tref} autoFocus  onBlur={() => setEditing(false)} type={'text'} className={` h-7 font-semibold outline-none border-none w-[50%]`} onFocus={(e)=>onFocus(e)} />}
             <div className="border-r border-r-white h-full ml-2" />
             
             <div class="flex -space-x-4 pl-2 pr-2 w-[20%] justify-center">
@@ -46,7 +51,7 @@ const Task = ({task}) => {
             </div>
             
             <div className="border-r border-r-white h-full " />
-            <span className={`w-[20%] bg- text-[10pt] font-medium ${statusColor()} pl-2 pr-2 h-full flex justify-center items-center`}>
+            <span className={`w-[20%] bg- text-[10pt] text-white font-medium ${statusColor()} pl-2 pr-2 h-full flex justify-center items-center`}>
                 {task.status}
             </span>
             <div className="border-r border-r-white h-full " />
@@ -57,6 +62,7 @@ const Task = ({task}) => {
             <span className="pr-2 pl-2">
                 <BsThreeDots />
             </span>
+            
         </div>
     )
 }
