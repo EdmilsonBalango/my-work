@@ -121,8 +121,42 @@ const TaskDetail = () => {
                     <button onClick={() => setPopup(false)} className="outline-none bg-black-50 hover:bg-black-30 flex justify-center items-center h-10 w-10 rounded-md absolute top-3 right-3">
                         <BsX color="#fff" size={34} />
                     </button>
-                    <div className="h-[85%] w-[80%] bg-white rounded-md shadow-md p-5">
-                        <h1>Quem chamou foi {popupMessage.task}</h1>
+                    <div className="h-[85%] w-[65%] bg-white rounded-md shadow-md p-10">
+                        <div className="flex flex-row items-center mb-2.5">
+                            <div className="p-0 bg-slate-400 rounded-md flex justify-center items-center mr-2.5">
+                                <BsPlus size={34} color="#444" />
+                            </div>
+                            <h1 className="text-2xl font-semibold text-[#444] ">Adicionar nova tarefa</h1>
+                        </div>
+                        <p className="text-sm text-[#777]">Adicione uma nova tarefa para a lista de tarefas. Cumpri-las todas, aumentará seus pontos</p>
+                        {/* form begins */}
+                        <div className="mt-10 w-full ">
+                            <div className="flex flex-col">
+                                <span className="font-semibold ml-2.5 mb-1 border-slate-400" >Titulo da tarefa</span>
+                                <input type={'text'} placeholder="Digite o título da tarefa" className="outline-none rounded-md focus:border-blue-core" />
+                            </div>
+                            <div className="flex flex-row mt-5 justify-around w-full">
+                                <div className="flex flex-col w-1/2">
+                                    <span className="font-semibold ml-2.5 mb-1 border-slate-400" >Prazo</span>
+                                    <input type={'date'} placeholder="Digite o título da tarefa" className="outline-none rounded-md focus:border-blue-core w-[60%]" />
+                                </div>
+                                <div className="flex flex-col w-1/2 items-start">
+                                    <span className="font-semibold ml-2.5 mb-1 border-slate-400" >Participantes</span>
+                                    <div class="flex -space-x-4 pl-2 pr-2 w-[20%] justify-center">
+                                        <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="" />
+                                        <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800" src="https://flowbite.com/docs/images/people/profile-picture-3.jpg" alt="" />
+                                        <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800" src="https://flowbite.com/docs/images/people/profile-picture-3.jpg" alt="" />
+                                        <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800" src="https://flowbite.com/docs/images/people/profile-picture-3.jpg" alt="" />
+                                        <a class="flex justify-center items-center w-10 h-10 text-xs font-medium text-white bg-gray-700 rounded-full border-2 border-white hover:bg-gray-600 dark:border-gray-800" href="#">+</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex flex-col w-full mt-5">
+                                <span className="font-semibold ml-2.5 mb-1 border-slate-400" >Descrição</span>
+                                <textarea  placeholder="Digite o título da tarefa" className="outline-none rounded-md focus:border-blue-core w-[60%]" />
+                            </div>
+                            
+                        </div>
                     </div>                
                 </div>
 
